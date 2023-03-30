@@ -1,0 +1,25 @@
+<html lang="en">
+    <head>
+        <title>Email</title>
+    </head>
+    <body>
+        <section>
+            {{#each entries}}
+                <article style="display: flex; background-color: #191919; width: fit-content; color: #ffffff; overflow: auto; margin: 2rem 0">
+                    <div style="background-color: #191919; padding: 0 1rem">
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone</p>
+                        <p>Hobbies</p>
+                    </div>
+                    <div style="background-color: #252525; padding: 0 1rem">
+                        <p>{{this.name}}</p>
+                        <p style="color: white; text-decoration-thickness: 8; text-underline-position: under;">{{this.email}}</p>
+                        <p>{{this.phone}}</p>
+                        <p>{{this.hobbies}}</p>
+                    </div>
+                </article>
+            {{/each}}
+        </section>
+    </body>
+</html>

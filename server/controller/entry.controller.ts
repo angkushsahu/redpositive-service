@@ -24,7 +24,12 @@ export const getEntry = catchAsyncErrors(async (req: Request, res: Response, nex
 export const getAllEntries = catchAsyncErrors(async (req: Request, res: Response, next: NextFunction) => {
     const totalEntries = await Entry.countDocuments();
     if (!totalEntries) {
-        return next(new ErrorHandler("No entries found", 404));
+        res.status(200).json({
+            success: true,
+            message: "Entries found successfully",
+            totalEntries,
+            entries: [],
+        });
     }
 
     const { page, rowsPerPage } = req.query;

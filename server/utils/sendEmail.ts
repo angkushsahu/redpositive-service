@@ -13,8 +13,8 @@ export default async function sendResetEmail() {
 
         const mailOptions = {
             from: process.env.MAIL,
-            // to: process.env.DESTINATION_MAIL,
-            to: "angkushsahu2502@gmail.com",
+            to: process.env.DESTINATION_MAIL,
+            // to: "angkushsahu2502@gmail.com",
             subject: "ENTRIES LIST",
             html: `<p>Find all the selected entries in the <strong><u>.xlsx</u></strong> file below</p>`,
             attachments: [{ filename: "entries.xlsx", path: resolve(__dirname, "../excel/entries.xlsx") }],
